@@ -22,7 +22,9 @@ app.get('/', function(req, res) {
 
     // Use instagram package to get popular media
     // Render home page and pass in the images
-    res.render('pages/index');
+    ig.media_popular(function(err, medias, remaining, limit){
+    	res.render('pages/index');
+    });
 });
 
 // Start the server
